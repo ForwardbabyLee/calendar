@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>日历－签到效果实现</title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"  >
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <style>
+        .calendar { width:100%;margin:10px 0 20px 0;color:#555;}
+        .calendar h4 {border-bottom: 2px solid #5bd999;text-align: center;font-size: 1.2em;font-weight: 700;margin-top: 10px;margin-bottom:0;padding: 10px 0;}
+        .calendar .sign_tab {width: 100%;border-collapse: collapse;border: 1px solid #e5e5e5;border-top: 0;table-layout: fixed;}
+        .calendar .sign_tab th{text-align: center;width: 16.67%;height: 60px;font-weight: 700;}
+        .calendar .sign_tab tr td{border: 1px solid #e5e5e5;height: 60px;text-align: center;font-size: .7em;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif}
+    </style>
+    <script type="text/javascript" src="../js-bag/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/rili.js"></script>
+</head>
+<body>
+    <div id="calendar-box"></div>
+<script type="text/javascript">
+    $(function(){
+        //ajax获取日历json数据 （服务器时间，签到记录日期）
+        // 1.服务器返回时间
+        var serverTime = 1497591631*1000;
+        Calendar.init(serverTime, [1, 13, 14, 16, 22, 25], $('#calendar-box'));
+        // 2.指定时间
+//        Calendar.init("2015/11/22 10:14:11", [1, 13, 14, 17, 22, 25], $('#calendar-box'));
+    });
+</script>
+</body>
+</html>
